@@ -1,25 +1,24 @@
 module.exports = function(grunt) {
 	var secret=grunt.file.readJSON('secret.json');
-	var privateKey=grunt.file.read(secret.privateKey);
+	var testPrivateKey=grunt.file.read(secret.test.privateKey);
+	var deployPrivateKey=grunt.file.read(secret.deploy.privateKey);
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		secret: grunt.file.readJSON('secret.json'),	  
-		privateKey:'<%= secret.host %>',
 		sshexec: {
 			test: {
 				command: 'touch testfile.txt',
 				options: {
-					host: '<%= secret.host %>',
-					username: '<%= secret.username %>',
-					privateKey: privateKey
+					host: '<%= secret.test.host %>',
+					username: '<%= secret.test.username %>',
+					privateKey: testPrivateKey
 				}
 			},
 			deploy: {
 				command: 'touch testfile.txt',
 				options: {
-					host: '<%= secret.host %>',
-					username: '<%= secret.username %>',
-					privateKey: privateKey
+					host: '<%= secret.deploy.host %>',
+					username: '<%= secret.deploy.username %>',
+					privateKey: deployPrivateKey
 				}
 			}
 		}
