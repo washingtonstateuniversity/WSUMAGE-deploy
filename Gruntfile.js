@@ -4,6 +4,8 @@ module.exports = function(grunt) {
 	var deployPrivateKey=grunt.file.read(secret.deploy.privateKey);
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		secret: grunt.file.readJSON('secret.json'),	  
+		privateKey:'<%= secret.test.host %>',
 		sshexec: {
 			test: {
 				command: 'touch testfile.txt',
