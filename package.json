@@ -1,5 +1,5 @@
 {
-  "name": "WSU Web deployment",
+  "name": "WSU-Web-deployment",
   "version": "0.1.0",
   "description": "Deployment setup for code testing and validation first procedure",
   "main": "Gruntfile.js",
