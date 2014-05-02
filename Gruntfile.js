@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 					username: '<%= secret.username %>',
 					privateKey: privateKey
 				}
-			}
+			},
 			deploy: {
 				command: 'touch testfile.txt',
 				options: {
