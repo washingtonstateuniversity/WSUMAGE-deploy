@@ -19,6 +19,10 @@ module.exports = function(grunt) {
 	
 	grunt.loadNpmTasks('grunt-ssh');
 	grunt.registerTask('default', ['sshexec:test']);
+
+	grunt.registerTask('test', ['sshexec:test']);
+	grunt.registerTask('deploy', ['sshexec:test']);
+	
 };
 
 
