@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 				}
 			},
 			deploy: {
-				command: 'touch testfile.txt',
+				command: 'touch testdeployfile.txt',
 				options: {
 					host: '<%= secret.deploy.host %>',
 					username: '<%= secret.deploy.username %>',
