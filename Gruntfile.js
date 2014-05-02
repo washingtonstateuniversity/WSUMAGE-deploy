@@ -14,6 +14,14 @@ module.exports = function(grunt) {
 					privateKey: privateKey
 				}
 			}
+			deploy: {
+				command: 'touch testfile.txt',
+				options: {
+					host: '<%= secret.host %>',
+					username: '<%= secret.username %>',
+					privateKey: privateKey
+				}
+			}
 		}
 	});
 	
@@ -21,7 +29,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['sshexec:test']);
 
 	grunt.registerTask('test', ['sshexec:test']);
-	grunt.registerTask('deploy', ['sshexec:test']);
+	grunt.registerTask('deploy', ['sshexec:test','sshexec:deploy']);
 	
 };
 
